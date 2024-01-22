@@ -189,27 +189,98 @@ let result = word.replace(/[aeiou]/ig, '');
 
 console.log(result);
 
-//14.*  Використовуючи оператор if реалізувати логіку переводу метрів в кілометри,
-// так щоб в консоль виводився результат обчислень з правильним закінченням.
-// Наприклад: 1000 метрів це 1 кілометр;  32 метри це 0,032 кілометра і т.д.
+
+
+// 8. Використовуючи цикл for перемістити значення від 1 до 5 у масив myArray.
+
+let myArray = [1, 2, 3, 4]
+for(let i = 0; i < myArray.length; i++){
+    console.log(myArray[i]);
+}
+
+
+// 9.  Напишіть 2 цикли.
+//   За допомогою першого передайте парні числа від 1 до 9 у myArray за допомогою циклу for.
+//   За допомогою другого передайте непарні числа від 1 до 9 у myArray за допомогою циклу for. 
+
+let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9] //четные
+for(let i = 0; i < myArray.length; i++){
+    if (myArray[i] % 2 === 0) {
+    console.log(myArray[i]);
+}
+}
+
+
+let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9] //не четные
+for(let i = 0; i < myArray.length; i++){
+    if (myArray[i] % 2 !== 0) {
+    console.log(myArray[i]);
+}
+}
+
+
+// 10. Оголоcіть та ініціалізуйте змінну total = 0.
+// Використовуйте цикл for, щоб додати значення кожного елемента масиву myArr до підсумку.
+// const myArr = [2, 3, 4, 5, 6];
+
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
+for(let i = 0; i < myArr.length; i++){
+    total += myArr[i];
+}
+
+console.log(total);
+
+
+// 11. Напишіть код, котрий виведе в консоль кожен піделемент в arr по одному.
+
+// const arr = [ [1, 2], [3, 4], [5, 6] ];
+
+//Console output:
+//1
+//2
+//3
+//4
+//5
+//6
+
+const arr = [ [1, 2], [3, 4], [5, 6] ];
+const flatArr = arr.flat();
+for (let i = 0; i < flatArr.length; i++) {
+    console.log(flatArr[i]);
+}
 
 
 
-let m = 101000;
-let distanceKm = m * 0.001;
 
-if (distanceKm === 1.5) {
-    console.log(distanceKm + ' кілометра');
+//12. Доповніть код нижче, так щоб в консоль повертався результат множення усіх чисел у підмасивах arr.
+ //   Використайте для цього вкладені цикли for.
+
+   // Наприклад:
+   // const arr = [[1], [2], [3]]  >  console.log(product) має повернути 6
+   // const arr = [[1, 2], [3, 4], [5, 6, 7]]  >  console.log(product) має повернути 5040
+   // const arr = [[5, 1], [0.2, 4, 0.5], [3, 9]]  >  console.log(product) має повернути 54
+
+   
+
+
+
+   const arr = [[1, 2], [3, 4], [5, 6, 7]];
+let product = 1;
+
+for (const subArray of arr) {
+    let subArrayProduct = 1;
+
+    for (const number of subArray) {
+        subArrayProduct *= number;
+    }
+
+    product *= subArrayProduct;
 }
-else if (distanceKm % 1 !==0) {    // дроби
-    console.log(distanceKm + ' кілометра');
-}
-else if (distanceKm % 10 === 1) {  // если единица
-    console.log(distanceKm + ' кілометр');
-}
-else if ([2, 3, 4].includes(distanceKm % 10)) { //заканчивается на 2,3,4 
-    console.log(distanceKm + ' кілометри');
-}
-else {
- console.log(distanceKm + ' кілометрів');
-}
+
+console.log(product);
+
+
+
+
+
